@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: #757F9A;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #D7DDE8, #757F9A);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+.container {
+    padding-top: 30px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-container button {
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    background: #16222a;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #16222a, #3a6073);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #16222a, #3a6073);
+    color: white;
+}
+
+.button-container button:hover {
+    border: 2px dashed rgb(39, 37, 37);
+    padding: 8px 23px;
+}
+
+.textarea-container {
+    margin-top: 15px;
+    display: flex;
+    gap: 50px;
+}
+
+.textarea-container textarea {
+    width: 100%;
+    padding: 10px;
+    height: 60vh;
+    font-size: 18px;
+    outline: none;
+    border: 5px solid green;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-box-shadow: 0px 5px 10px 5px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 10px 5px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 10px 5px rgba(34, 60, 80, 0.2);
+
+}
+
+#rightTextarea {
+    border: 5px solid yellowgreen;
+}
+
+.text-container {
+    padding-top: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text-container h1 {
+    margin-bottom: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.text-container span {
+    color: red;
+}
+
+.text-container p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

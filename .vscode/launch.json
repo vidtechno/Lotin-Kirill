@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "https://github.com/vidtechno/lotin-kiril.git",
+            "request": "launch",
+            "url": "https://github.com/vidtechno/lotin-kiril.git"
+        }
+    ]
+}
