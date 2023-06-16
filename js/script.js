@@ -1,4 +1,4 @@
-var latinToCyrillicMap = {
+const latinToCyrillicMap = {
   'a': 'а',
   'b': 'б',
   'c': 'ц',
@@ -6,7 +6,7 @@ var latinToCyrillicMap = {
   'e': 'е',
   'f': 'ф',
   'g': 'г',
-  'h': 'х',
+  'h': 'ҳ',
   'i': 'и',
   'j': 'й',
   'k': 'к',
@@ -15,20 +15,20 @@ var latinToCyrillicMap = {
   'n': 'н',
   'o': 'о',
   'p': 'п',
-  'q': 'к',
+  'q': 'қ',
   'r': 'р',
   's': 'с',
   't': 'т',
   'u': 'у',
   'v': 'в',
   'w': 'в',
-  'x': 'кс',
+  'x': 'х',
   'y': 'й',
   'z': 'з',
   "'": "ъ"
 };
 
-var cyrillicToLatinMap = {
+const cyrillicToLatinMap = {
   'а': 'a',
   'б': 'b',
   'ц': 's',
@@ -36,7 +36,8 @@ var cyrillicToLatinMap = {
   'е': 'e',
   'ф': 'f',
   'г': 'g',
-  'х': 'h',
+  'ҳ': 'h',
+  'х': 'x',
   'и': 'i',
   'й': 'j',
   'к': 'k',
@@ -56,27 +57,26 @@ var cyrillicToLatinMap = {
   "ы": "i"
 };
 
-var isLatinToCyrillic = true;
+let isLatinToCyrillic = true;
 
 function translateText(text) {
-  var translationMap = isLatinToCyrillic ? latinToCyrillicMap : cyrillicToLatinMap;
+  const translationMap = isLatinToCyrillic ? latinToCyrillicMap : cyrillicToLatinMap;
 
-  var translatedText = '';
-  for (var i = 0; i < text.length; i++) {
-    var char = text.charAt(i).toLowerCase();
+  let translatedText = '';
+  for (let i = 0; i < text.length; i++) {
+    const char = text.charAt(i).toLowerCase();
     if (translationMap.hasOwnProperty(char)) {
       translatedText += translationMap[char];
     } else {
       translatedText += char;
     }
   }
-  var translationMap = isLatinToCyrillic ? latinToCyrillicMap : cyrillicToLatinMap;
 
-  var translatedText = '';
-  for (var i = 0; i < text.length; i++) {
-    var char = text.charAt(i);
-    var lowercaseChar = char.toLowerCase();
-    var translatedChar = translationMap[lowercaseChar];
+  translatedText = '';
+  for (let i = 0; i < text.length; i++) {
+    const char = text.charAt(i);
+    const lowercaseChar = char.toLowerCase();
+    const translatedChar = translationMap[lowercaseChar];
 
     if (translatedChar !== undefined) {
       if (char === lowercaseChar) {
@@ -93,21 +93,21 @@ function translateText(text) {
 
 function toggleTranslation() {
   isLatinToCyrillic = !isLatinToCyrillic;
-  var toggleButton = document.getElementById("toggleButton");
+  const toggleButton = document.getElementById("toggleButton");
   toggleButton.textContent = isLatinToCyrillic ? "Lotin-Kirill" : "Kirill-Lotin";
-  var leftTextarea = document.getElementById("leftTextarea");
-  var rightTextarea = document.getElementById("rightTextarea");
+  const leftTextarea = document.getElementById("leftTextarea");
+  const rightTextarea = document.getElementById("rightTextarea");
   rightTextarea.value = translateText(leftTextarea.value);
 }
 
 function copyTranslation() {
-  var rightTextarea = document.getElementById("rightTextarea");
+  const rightTextarea = document.getElementById("rightTextarea");
   rightTextarea.select();
   document.execCommand("copy");
 }
-
-var leftTextarea = document.getElementById("leftTextarea");
+  
+const leftTextarea = document.getElementById("leftTextarea");
 leftTextarea.addEventListener("input", function () {
-  var rightTextarea = document.getElementById("rightTextarea");
+  const rightTextarea = document.getElementById("rightTextarea");
   rightTextarea.value = translateText(leftTextarea.value);
-}); 
+});
